@@ -6,14 +6,14 @@ CREATE TABLE IF NOT EXISTS Client
     email VARCHAR(255)
 );
 
-
 CREATE TABLE IF NOT EXISTS Room
 (
-    id BIGSERIAL PRIMARY KEY,
-    room_number VARCHAR(255) NOT NULL,
-    capacity INT NOT NULL,
-    room_class VARCHAR(50) NOT NULL,
-    price_per_night DECIMAL(10, 2) NOT NULL
+    id BIGSERIAL PRIMARY KEY,          -- первинний ключ
+    room_number VARCHAR(50) NOT NULL,  -- номер кімнати (унікальний)
+    capacity INT NOT NULL,             -- ємність кімнати
+    room_class VARCHAR(50) NOT NULL,   -- клас кімнати
+    price_per_night DOUBLE PRECISION NOT NULL,  -- ціна за ніч
+    UNIQUE (room_number)               -- номер кімнати має бути унікальним
 );
 
 CREATE TABLE IF NOT EXISTS Administrator

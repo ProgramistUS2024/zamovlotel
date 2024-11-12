@@ -14,14 +14,9 @@ import java.util.List;
 @Table(name ="Room")
 public class Room {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String roomNumber;
     private int capacity;
     private String roomClass;
     private double pricePerNight;
-
-    @OneToMany(mappedBy = "room")
-    private List<Invoice> invoices;
 }
